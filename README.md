@@ -6,6 +6,8 @@
 
 该项目以[vue-admin-template](https://github.com/PanJiaChen/vue-admin-template/)为基础，使用 `vue-cli 5 + Vue 3 + Element Plus` 进行构建。使用`prettierrc`为格式化工具，并注释了原有的部分`eslint`规则，如有需要，请自行修改。
 
+本项目应该会持续维护，如有问题，请提交 issus。
+
 ## Build Setup
 
 ```bash
@@ -54,3 +56,12 @@ npm run lint -- --fix
 ```
 
 更多信息请参考 [使用文档](https://panjiachen.github.io/vue-element-admin-site/zh/)
+
+## 浏览器支持
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
+| --------- | --------- | --------- | --------- |
+| IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
+
+## License
+
+[MIT](https://github.com/FreezeNow/vue-element-plus-admin-template/blob/master/LICENSE) license.
