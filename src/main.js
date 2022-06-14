@@ -2,10 +2,9 @@ import * as Vue from 'vue'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
-import ElementUI from 'element-plus'
+import ElementPlus from 'element-plus'
 import 'element-plus/theme-chalk/index.css'
-import locale from 'element-plus/lib/locale/lang/zh-cn' // lang i18n
-
+import zhCn from 'element-plus/es/locale/lang/zh-cn' // lang i18n
 import '@/styles/index.scss' // global css
 
 import App from './App'
@@ -14,6 +13,8 @@ import router from './router'
 
 import '@/icons' // icon
 import '@/permission' // permission control
+import SvgIcon from '@/components/SvgIcon'; // svg component
+
 
 /**
  * If you don't want to use mock-server
@@ -29,8 +30,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 window.$vueApp = Vue.createApp(App)
-// set ElementUI lang to EN
-window.$vueApp.use(ElementUI, { locale })
+// set ElementPlus lang to ZH
+window.$vueApp.use(ElementPlus, { locale:zhCn })
+// register globally
+window.$vueApp.component('svg-icon', SvgIcon);
 
 window.$vueApp.config.globalProperties.routerAppend = (path, pathToAppend) => {
   return path + (path.endsWith('/') ? '' : '/') + pathToAppend
