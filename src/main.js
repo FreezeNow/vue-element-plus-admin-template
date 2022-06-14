@@ -1,10 +1,10 @@
-import Vue from 'vue'
+import * as Vue from 'vue'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+import ElementUI from 'element-plus'
+import 'element-plus/theme-chalk/index.css'
+import locale from 'element-plus/lib/locale/lang/zh-cn' // lang i18n
 
 import '@/styles/index.scss' // global css
 
@@ -28,16 +28,13 @@ if (process.env.NODE_ENV === 'production') {
   mockXHR()
 }
 
+window.$vueApp = Vue.createApp(App)
 // set ElementUI lang to EN
-Vue.use(ElementUI, { locale })
-// 如果想要中文版 element-ui，按如下方式声明
-// Vue.use(ElementUI)
+window.$vueApp.use(ElementUI, { locale })
 
-Vue.config.productionTip = false
-
-new Vue({
-  el: '#app',
-  router,
-  store,
-  render: h => h(App)
-})
+window.$vueApp.config.globalProperties.routerAppend = (path, pathToAppend) => {
+  return path + (path.endsWith('/') ? '' : '/') + pathToAppend
+}
+window.$vueApp.use(store)
+window.$vueApp.use(router)
+window.$vueApp.mount('#app')
