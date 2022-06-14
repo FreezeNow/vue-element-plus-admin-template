@@ -14,6 +14,8 @@ import router from './router'
 
 import '@/icons' // icon
 import '@/permission' // permission control
+import SvgIcon from '@/components/SvgIcon'; // svg component
+
 
 /**
  * If you don't want to use mock-server
@@ -31,6 +33,8 @@ if (process.env.NODE_ENV === 'production') {
 window.$vueApp = Vue.createApp(App)
 // set ElementUI lang to EN
 window.$vueApp.use(ElementUI, { locale })
+// register globally
+window.$vueApp.component('svg-icon', SvgIcon);
 
 window.$vueApp.config.globalProperties.routerAppend = (path, pathToAppend) => {
   return path + (path.endsWith('/') ? '' : '/') + pathToAppend
