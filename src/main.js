@@ -14,6 +14,7 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 import SvgIcon from '@/components/SvgIcon'; // svg component
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 
 /**
@@ -41,3 +42,6 @@ window.$vueApp.config.globalProperties.routerAppend = (path, pathToAppend) => {
 window.$vueApp.use(store)
 window.$vueApp.use(router)
 window.$vueApp.mount('#app')
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  window.$vueApp.component(key, component)
+}
