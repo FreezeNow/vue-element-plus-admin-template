@@ -14,18 +14,18 @@
         </template>
       </el-table-column>
       <el-table-column label="Title">
-        <template v-slot="scope">
-          {{ scope.row.title }}
+        <template v-slot="{row}">
+          {{ row.title }}
         </template>
       </el-table-column>
       <el-table-column label="Author" width="110" align="center">
-        <template v-slot="scope">
-          <span>{{ scope.row.author }}</span>
+        <template v-slot="{row}">
+          <span>{{ row.author }}</span>
         </template>
       </el-table-column>
       <el-table-column label="Pageviews" width="110" align="center">
-        <template v-slot="scope">
-          {{ scope.row.pageviews }}
+        <template v-slot="{row}">
+          {{ row.pageviews }}
         </template>
       </el-table-column>
       <el-table-column
@@ -34,9 +34,9 @@
         width="110"
         align="center"
       >
-        <template v-slot="scope">
-          <el-tag :type="statusFilter_filter(scope.row.status)">{{
-            scope.row.status
+        <template v-slot="{row}">
+          <el-tag :type="statusFilter_filter(row.status)">{{
+            row.status
           }}</el-tag>
         </template>
       </el-table-column>
@@ -46,9 +46,9 @@
         label="Display_time"
         width="200"
       >
-        <template v-slot="scope">
+        <template v-slot="{row}">
           <i class="el-icon-time" />
-          <span>{{ scope.row.display_time }}</span>
+          <span>{{ row.display_time }}</span>
         </template>
       </el-table-column>
     </el-table>

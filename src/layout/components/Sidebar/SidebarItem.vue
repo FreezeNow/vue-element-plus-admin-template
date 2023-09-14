@@ -27,7 +27,7 @@
       popper-append-to-body
     >
       <template v-slot:title>
-        <item
+        <Item
           v-if="item.meta"
           :icon="item.meta && item.meta.icon"
           :title="item.meta.title"
@@ -48,7 +48,7 @@
 <script>
 import path from '@/utils/path'
 import { isExternal } from '@/utils/validate'
-import Item from './Item'
+import Item from './Item.vue'
 import AppLink from './Link'
 import FixiOSBug from './FixiOSBug'
 
